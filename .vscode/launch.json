@@ -15,7 +15,7 @@
                 "main",
                 "--debug"
             ],
-            "cwd": "${workspaceFolder}/pdf"
+            "cwd": "${workspaceFolder}/preco"
         }
     ]
 }
