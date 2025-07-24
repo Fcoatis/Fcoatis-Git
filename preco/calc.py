@@ -15,9 +15,16 @@ def calculo():
 
     df1 = pd.read_excel(data_bytes)
     df = df1[["Data", "CDI", "IMAB5+", "US0012M", "Libor_12M"]]
-    df['cdi_ind'] = 1
-    df['IMAB5+ +1%'] = 1
-    df['Libor_12M'] = 1
+    #df['cdi_ind'] = 1
+    df['cdi_ind'] = 0
+    df.loc[0, 'cdi_ind'] = 1
+    #df['IMAB5+ +1%'] = 1
+    df['IMAB5+ +1%'] = 0
+    df.loc[0, 'IMAB5+ +1%'] = 1
+    #df['Libor_12M'] = 1
+    df['Libor_12M'] = 0
+    df.loc[0, 'Libor_12M'] = 1
+
     
     df['cdi_ind'] = df['cdi_ind'].astype(float)
     df['IMAB5+ +1%'] = df['IMAB5+ +1%'].astype(float)
@@ -29,4 +36,4 @@ def calculo():
         df.loc[i, 'Libor_12M'] = (df.loc[i-1, 'Libor_12M'] * (df.loc[i, 'US0012M'] / df.loc[i-1, 'US0012M'])) * ( 1.035 ** (1/252)) #=(H2*(G3/G2))*((1,035^(1/252)))
     
     df = df.iloc[:,[0, 1, 5, 2, 6, 3, 4]]
-    print(df)
+    print(df.head())

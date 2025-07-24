@@ -7,7 +7,7 @@
 
         {
             "name": "Python: functions_framework",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "functions_framework",
             "args": [
@@ -15,7 +15,7 @@
                 "main",
                 "--debug"
             ],
-            "cwd": "${workspaceFolder}/preco"
+            "cwd": "${workspaceFolder}/pdf"
         }
     ]
 }
