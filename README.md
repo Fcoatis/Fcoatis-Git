@@ -1,1 +1,1 @@
-# My First Git Project
+Este projeto mostra o básico do Git.
